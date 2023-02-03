@@ -1,0 +1,45 @@
+
+/* li{
+  list-style-type: none;
+  margin: 0;
+  background-color: #FFFFFF;
+}
+li:hover{
+  background-color: #ececec;
+}
+li a{
+  display: inline-block;
+  color: #212529;
+  border-color: #FFFFFF;
+}
+li a:hover{
+  color: #212529;
+  border-color: #e6e6e6;
+}
+background-color: #ececec; */
+/* a span{
+  background: #ff4d4d;
+  color:white;
+  padding: 0.1rem 0.45rem;
+  border-radius: 100rem;
+  font-size: 0.9rem;
+} */
+.menu{
+  /* background: whitesmoke; */
+  display: none;
+}
+.menu-container:hover .menu{
+  display: block;
+}
+.dresses-menu{
+  display: none;
+}
+.dresses-container:hover .dresses-menu{
+  display: block;
+}
+.nav-item-menu{
+  display: none;
+}
+.nav-item:hover .nav-item-menu{
+  display: block;
+}

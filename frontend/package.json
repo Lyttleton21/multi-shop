@@ -23,11 +23,12 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.3",
     "ngx-drag-scroll": "^14.0.1",
     "ngx-owl-carousel-o": "^14.0.1",
+    "ngx-select-dropdown": "^3.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

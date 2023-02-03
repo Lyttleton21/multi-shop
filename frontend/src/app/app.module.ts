@@ -9,6 +9,7 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { faBars, faHeart, faCartPlus, faAngleDown, faAngleRight} from '@fortawesome/free-solid-svg-icons';
 import { CarouselPageComponent } from './components/partial/carousel-page/carousel-page.component';
 import { TopbapComponent } from './components/partial/topbap/topbap.component';
+import { NavbarComponent } from './components/partial/navbar/navbar.component';
 
 
 
@@ -16,7 +17,8 @@ import { TopbapComponent } from './components/partial/topbap/topbap.component';
   declarations: [
     AppComponent,
     CarouselPageComponent,
-    TopbapComponent
+    TopbapComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
