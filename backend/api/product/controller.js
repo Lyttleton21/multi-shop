@@ -66,19 +66,22 @@ exports.productController = {
     ),
     findProductById: asyncHandler(
         async (req, res) => {
+            const {id} = req.params;
             try {
-                const {id} = req.params;
+                //console.log(id);
                 const $findProductById = await Product.findByPk(id);
                 if($findProductById === null){
-                    res.send({
-                        message:'Unable to find the id you enter!!!'
-                    });
+                    res.status(404)
+                    .send('Unable to find the id you enter!!!');
+                    //console.log('Product not found');
                 }else{
                     res.status(200)
                     .send($findProductById);
                 }
             } catch (error) {
-                console.log(error);
+                console.log(error.message);
+                res.status(500)
+                .send("Server Error: Please contact the developers");
             }
         }
     ),
@@ -89,7 +92,7 @@ exports.productController = {
                 const findProductByName = await Product.findAll({
                     where: {
                         name: {
-                            [Op.iLike] : `%${name}%`
+                            [Sequelize.Op.iLike] : `%${name}%`
                         }
                     },
                     order: sequelize.random(),

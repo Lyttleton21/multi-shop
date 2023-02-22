@@ -1,38 +1,77 @@
 
 <app-home-carousel></app-home-carousel>
 
-<!-- Featured Start -->
-<div class="container-fluid pt-5">
-  <div class="row px-xl-5 pb-3">
-      <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-          <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-              <h1 style="font-size: 2.5rem;" class="fa fa-check text-primary m-0 mr-3"></h1>
-              <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
-          </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-          <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-              <h1 style="font-size: 2.5rem;" class="fa fa-truck text-primary m-0 mr-2"></h1>
-              <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
-          </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-          <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-              <h1 style="font-size: 2.5rem;" class="fa fa-exchange text-primary m-0 mr-3"></h1>
-              <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
-          </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-          <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
-              <h1 style="font-size: 2.5rem;" class="fa fa-phone text-primary m-0 mr-3"></h1>
-              <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
-          </div>
-      </div>
-  </div>
-</div>
-<!-- Featured End -->
 
-<app-featured-products></app-featured-products>
+
+  <!-- Featured Start -->
+  <div class="container-fluid pt-5">
+    <div class="row px-xl-5 pb-3">
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 style="font-size: 2.5rem;" class="fa fa-check text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 style="font-size: 2.5rem;" class="fa fa-truck text-primary m-0 mr-2"></h1>
+                <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 style="font-size: 2.5rem;" class="fa fa-exchange text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                <h1 style="font-size: 2.5rem;" class="fa fa-phone text-primary m-0 mr-3"></h1>
+                <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- Featured End -->
+
+  <!-- <app-featured-products> -->
+    <div class="container-fluid pt-5 pb-3">
+      <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
+        <span class="bg-secondary pr-3">
+          Featured Products
+        </span>
+      </h2>
+      <div class="row px-xl-5">
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1"
+        *ngFor="let product of featuredProducts">
+          <div class="product-item bg-light mb-4">
+            <img [src]="product.imageUrl" [alt]="product.name" class="img-fluid w-100">
+            <div class="product-action">
+              <a class="btn btn-outline-dark btn-square" (click)="addToCart(product)"><i class="fa fa-shopping-cart"></i></a>
+              <a class="btn btn-outline-dark btn-square" (click)="addToFavorite(product)"><i class="fa fa-heart"></i></a>
+              <a class="btn btn-outline-dark btn-square"><i class="fa fa-refresh"></i></a>
+              <a class="btn btn-outline-dark btn-square"><i class="fa fa-search"></i></a>
+            </div>
+            <div class="text-center py-4">
+              <p class="h6 text-decoration-none text-truncate">
+                {{product.name | titlecase}}
+              </p>
+              <div class="d-flex align-items-center justify-content-center mt-2">
+                <h5>{{product.price | currency:'NGN':'symbol-narrow'}}</h5>
+                <h6 class="text-muted ml-2">
+                  <del>{{product.old_price | currency:'NGN':'symbol-narrow'}}</del>
+                </h6>
+              </div>
+              <div class="d-flex align-items-center justify-content-center mb-1">
+                <!-- i will put ng star here -->
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- </app-featured-products> -->
+
 
 <!-- Offer Start -->
 <div class="container-fluid pt-5 pb-3">
@@ -63,4 +102,3 @@
 
 <app-carousel-page></app-carousel-page>
 
-<footer></footer>

@@ -43,11 +43,19 @@
           <div class="d-inline-flex align-items-center d-block d-lg-none">
               <a href="" class="btn px-0 ml-2">
                 <i class="fa fa-heart" aria-hidden="true"></i>
-                  <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+                  <span class="badge text-dark border border-dark rounded-circle"
+                  style="padding-bottom: 2px;"
+                  *ngIf="this.totalfav > 0">
+                    {{this.totalfav}}
+                  </span>
               </a>
-              <a href="" class="btn px-0 ml-2">
+              <a routerLink="/cart-page" class="btn px-0 ml-2">
                   <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                  <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+                  <span class="badge text-dark border border-dark rounded-circle"
+                  style="padding-bottom: 2px;"
+                  *ngIf="this.cartQuantity > 0">
+                    {{this.cartQuantity}}
+                  </span>
               </a>
           </div>
       </div>
@@ -59,11 +67,15 @@
               <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
           </a>
       </div>
+
       <div class="col-lg-4 col-6 text-left">
-          <form>
+          <form #s>
               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search for products">
-                  <div class="input-group-append">
+                  <input type="text" class="form-control"
+                   placeholder="Search for products"
+                   (keyup.enter)="search(s.value)"
+                   [value]="searchProduct">
+                  <div class="input-group-append" (click)="search(s.value)">
                       <span class="input-group-text bg-transparent text-primary">
                         <i class="fa fa-search"></i>
                       </span>
@@ -71,6 +83,7 @@
               </div>
           </form>
       </div>
+
       <div class="col-lg-4 col-6 text-right">
           <p class="m-0">Customer Service</p>
           <h5 class="m-0">+2349064145970</h5>

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http'
+//import { NgOptimizedImage } from '@angular/common'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +15,9 @@ import { NavbarComponent } from './components/partial/navbar/navbar.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { HomeCarouselComponent } from './components/partial/home-carousel/home-carousel.component';
 import { FooterComponent } from './components/partial/footer/footer.component';
-import { FeaturedProductsComponent } from './components/partial/featured-products/featured-products.component';
+import { CartComponent } from './components/pages/cart/cart.component';
+import { BreadcrumbComponent } from './components/partial/breadcrumb/breadcrumb.component';
+import { FavoritesPageComponent } from './components/pages/favorites-page/favorites-page.component';
 
 
 
@@ -27,7 +30,9 @@ import { FeaturedProductsComponent } from './components/partial/featured-product
     HomeComponent,
     HomeCarouselComponent,
     FooterComponent,
-    FeaturedProductsComponent
+    CartComponent,
+    BreadcrumbComponent,
+    FavoritesPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,7 @@ import { FeaturedProductsComponent } from './components/partial/featured-product
     CarouselModule,
     BrowserAnimationsModule,
     HttpClientModule
+    //NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

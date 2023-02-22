@@ -6,5 +6,4 @@ const asyncHandler = require('express-async-handler');
 Cartgory.sync();
 
 exports.cartgoryContoller = {
-    
 }
