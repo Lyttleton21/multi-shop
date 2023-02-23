@@ -20,7 +20,7 @@ export class CartComponent implements OnInit {
     this.cartService.getCartObservable()
     .subscribe(data => {
       this.cart = data;
-      //console.log(this.cart);
+      console.log(this.cart);
     });
   }
 

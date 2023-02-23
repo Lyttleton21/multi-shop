@@ -61,6 +61,8 @@ exports.productController = {
                 }
             } catch (error) {
                 console.log(error);
+                res.status(500)
+                .send("Server error: Please contact developers");
             }
         }
     ),
@@ -142,6 +144,36 @@ exports.productController = {
                 }
             } catch (error) {
                 console.log(error);
+            }
+        }
+    ),
+
+
+    getProductByCatagory:asyncHandler(
+        async (req, res) => {
+            try {
+                const data = req.params.categoty;
+                //console.log({"CARTGORY" : data})
+                const _getProductByCatagory = await Product.findAll({
+                    where: {
+                        categoty: {
+                            [Sequelize.Op.eq]: data
+                        }
+                    },
+                    raw:true,
+                    limit:3,
+                    order: sequelize.random()
+                });
+                if(_getProductByCatagory === null){
+                    res.send({message: "Not Found"});
+                }else{
+                    res.status(200)
+                    .send(_getProductByCatagory);
+                }
+            } catch (error) {
+                console.log(error);
+                res.status(500)
+                .send("Server error, Please Contact Developers");
             }
         }
     )

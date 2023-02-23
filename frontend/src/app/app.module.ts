@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http'
+import { ReactiveFormsModule } from '@angular/forms';
 //import { NgOptimizedImage } from '@angular/common'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { FooterComponent } from './components/partial/footer/footer.component';
 import { CartComponent } from './components/pages/cart/cart.component';
 import { BreadcrumbComponent } from './components/partial/breadcrumb/breadcrumb.component';
 import { FavoritesPageComponent } from './components/pages/favorites-page/favorites-page.component';
+import { ProductDetailsComponent } from './components/pages/product-details/product-details.component';
 
 
 
@@ -33,6 +35,7 @@ import { FavoritesPageComponent } from './components/pages/favorites-page/favori
     CartComponent,
     BreadcrumbComponent,
     FavoritesPageComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { FavoritesPageComponent } from './components/pages/favorites-page/favori
     FontAwesomeModule,
     CarouselModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
     //NgOptimizedImage
   ],
   providers: [],

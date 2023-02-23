@@ -9,11 +9,12 @@ import { CartItem } from '../shared/models/Cartitem';
 })
 export class FavouriteService {
   private favorite:Favourite =
-  //  {
-  //   items: [],
-  //   total:0
-  // } ||
-   this.getFavoriteFormLocalStorage();
+  {
+    items: [],
+    total:0
+  } ||
+  this.getFavoriteFormLocalStorage();
+
   private favoriteSubject: BehaviorSubject<Favourite> = new BehaviorSubject(this.favorite);
 
   constructor() { }

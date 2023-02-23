@@ -15,15 +15,24 @@ export class CartService {
   constructor(private productService:ProductService) {
    }
 
-  addToCart(product:Product):void{
+  addToCart(product:Product, color:string, size:string):void{
     let cartItem = this.cart.items
     .find(c => c.product.id === product.id);
     if (cartItem) {
-      //if the settled product is already in the cart do Nothing;
+      //if the selected product is already in the cart do Nothing;
       alert(`${product.name} was already added to Cart`);
       return;
     } else {
       this.cart.items.push(new CartItem(product));
+      let $cartItem = this.cart.items
+      .find(c => c.product.id === product.id);
+      if (!$cartItem) {
+        // if it return undefined
+        return;
+      } else {
+        $cartItem.selectedColor = color;
+        $cartItem.selectedSize = size;
+      }
       this.setCartToLocalStorage();
     }
   }
@@ -61,6 +70,18 @@ export class CartService {
       cartItem.price = quantity * cartItem.product.price;
     }
     this.setCartToLocalStorage();
+  }
+
+  changeColor$size(color: string, productId:string){
+    console.log(productId);
+    let cartItem = this.cart.items
+    .find(item => item.product.id === productId)
+    if (!cartItem) {
+      return;
+    } else {
+      cartItem.selectedColor = color;
+      //cartItem.selectedSize = size;
+    }
   }
 
   clearCart(){

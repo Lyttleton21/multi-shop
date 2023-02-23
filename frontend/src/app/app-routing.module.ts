@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './components/pages/cart/cart.component';
 import { FavoritesPageComponent } from './components/pages/favorites-page/favorites-page.component';
 import { HomeComponent } from './components/pages/home/home.component';
+import { ProductDetailsComponent } from './components/pages/product-details/product-details.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,11 @@ const routes: Routes = [
     path:'favorite-page',
     title:'Favorite Products',
     component:FavoritesPageComponent
+  },
+  {
+    path:'product-details/:id',
+    title:'Product Details',
+    component:ProductDetailsComponent
   }
 ];
 

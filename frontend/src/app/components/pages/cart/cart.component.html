@@ -18,6 +18,7 @@
             <tr>
               <td class="align-middle">
                 <img [src]="$cart.product.imageUrl"
+                routerLink="/product-details/{{$cart.product.id}}"
                 [alt]="$cart.product.name"
                 style="width: 50px;">
                 {{$cart.product.name}}
