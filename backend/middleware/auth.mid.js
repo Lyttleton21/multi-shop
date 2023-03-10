@@ -1,16 +1,16 @@
 const { verify } = require("jsonwebtoken");
 
 module.exports = (req, res, next) => {
-    const token = req.session.token;
+    const authorization = req.headers['authorization'].split(' ');
     try {
-        if (!token) {
+        if (authorization[0] !== 'Bearer') {
             return res.status(401).send({
               message: "No token provided!",
             });
         }
-        verify(token, process.env.SECRET, (err, decoded) => {
+        verify(authorization[1], process.env.SECRET, (err, decoded) => {
             if (err) {
-                return res.status(401).send({
+                return res.status(403).send({
                   message: "Unauthorized!",
                 });
             }

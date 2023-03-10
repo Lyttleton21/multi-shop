@@ -1,6 +1,19 @@
-<app-breadcrumb></app-breadcrumb>
+<app-breadcrumb>
+  <nav class="breadcrumb bg-light mb-30">
+    <a class="breadcrumb-item text-dark" routerLinkActive="active" routerLink="/">Home</a>
+    <a class="breadcrumb-item text-dark" routerLinkActive="active" routerLink="/shop">Shop</a>
+    <span class="breadcrumb-item active" routerLinkActive="active">Shopping Cart</span>
+</nav>
+</app-breadcrumb>
 
-<div class="container-fluid" >
+<app-not-found
+[visible]="!cart || cart.items.length === 0"
+notFoundMessage="cart page is empty!!!"
+resetLinkText="go to Shop Now"
+[resetLinkRoute]="'/shop'">
+</app-not-found>
+
+<div class="container-fluid" *ngIf="cart && cart.items.length >= 1">
   <div class="row px-xl-5">
     <div class="col-lg-8 table-responsive mb-5">
       <table class="table table-light table-borderless table-hover text-center mb-0">
@@ -20,7 +33,7 @@
                 <img [src]="$cart.product.imageUrl"
                 routerLink="/product-details/{{$cart.product.id}}"
                 [alt]="$cart.product.name"
-                style="width: 50px;">
+                style="width: 50px; cursor: pointer;">
                 {{$cart.product.name}}
               </td>
               <td class="align-middle">

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http'
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { NgOptimizedImage } from '@angular/common'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,11 @@ import { CartComponent } from './components/pages/cart/cart.component';
 import { BreadcrumbComponent } from './components/partial/breadcrumb/breadcrumb.component';
 import { FavoritesPageComponent } from './components/pages/favorites-page/favorites-page.component';
 import { ProductDetailsComponent } from './components/pages/product-details/product-details.component';
+import { NotFoundComponent } from './components/partial/not-found/not-found.component';
+import { ShopComponent } from './components/pages/shop/shop.component';
+import { FilterComponent } from './components/partial/filter/filter.component';
+import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 
 
 
@@ -36,6 +41,11 @@ import { ProductDetailsComponent } from './components/pages/product-details/prod
     BreadcrumbComponent,
     FavoritesPageComponent,
     ProductDetailsComponent,
+    NotFoundComponent,
+    ShopComponent,
+    FilterComponent,
+    RegisterPageComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +54,8 @@ import { ProductDetailsComponent } from './components/pages/product-details/prod
     CarouselModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
     //NgOptimizedImage
   ],
   providers: [],

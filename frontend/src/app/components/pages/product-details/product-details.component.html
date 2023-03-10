@@ -1,4 +1,18 @@
-<div class="container-fluid pb-5">
+<app-breadcrumb>
+  <nav class="breadcrumb bg-light mb-30">
+    <a class="breadcrumb-item text-dark" routerLinkActive="active" routerLink="/">Home</a>
+    <a class="breadcrumb-item text-dark" routerLinkActive="active" routerLink="/shop">Shop</a>
+    <span class="breadcrumb-item active" routerLinkActive="active">Product-Details</span>
+  </nav>
+</app-breadcrumb>
+
+<app-not-found
+[visible]="!product"
+notFoundMessage="product Not Found"
+resetLinkText="Back To HomePage">
+</app-not-found>
+
+<div class="container-fluid pb-5" *ngIf="product">
   <div class="row px-xl-5">
     <div class="col-lg-5 mb-30">
       <div id="product-carousel" class="carousel slide">
@@ -22,7 +36,7 @@
         </div>
 
           <h3 class="font-weight-semi-bold mb-4">
-            {{product.price | currency}}
+            {{product.price | currency:'NGN':'symbol-narrow'}}
           </h3>
           <p class="mb-4">
             Volup erat ipsum diam elitr rebum et dolor.
@@ -119,7 +133,7 @@
 
 
 <!-- You may also Like -->
-<div class="container-fluid py-5">
+<div class="container-fluid py-5" *ngIf="productsMayAlsoLike">
   <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
     <span class="bg-secondary pr-3">
       You May Also Like

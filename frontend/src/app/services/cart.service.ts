@@ -9,7 +9,12 @@ import { ProductService } from './product.service';
   providedIn: 'root'
 })
 export class CartService {
-  private cart:Cart = this.getCartFromLocalStorage();
+  private cart:Cart = this.getCartFromLocalStorage() ||
+  {
+    items: [],
+    totalPrice: 0,
+    totalCount: 0
+  }
   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
 
   constructor(private productService:ProductService) {

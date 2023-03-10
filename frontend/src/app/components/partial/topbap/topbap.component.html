@@ -69,19 +69,19 @@
       </div>
 
       <div class="col-lg-4 col-6 text-left">
-          <form #s>
-              <div class="input-group">
-                  <input type="text" class="form-control"
-                   placeholder="Search for products"
-                   (keyup.enter)="search(s.value)"
-                   [value]="searchProduct">
-                  <div class="input-group-append" (click)="search(s.value)">
-                      <span class="input-group-text bg-transparent text-primary">
-                        <i class="fa fa-search"></i>
-                      </span>
-                  </div>
-              </div>
-          </form>
+        <div class="input-group">
+          <input #s type="text" class="form-control"
+            placeholder="Search for products"
+            (keyup.enter)="search(s.value)"
+            [value]="searchProduct">
+          <div class="input-group-append"
+          style="cursor: pointer;"
+          (click)="search(s.value)">
+              <span class="input-group-text bg-transparent text-primary">
+                <i class="fa fa-search"></i>
+              </span>
+          </div>
+        </div>
       </div>
 
       <div class="col-lg-4 col-6 text-right">

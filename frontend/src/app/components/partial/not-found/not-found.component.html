@@ -1,0 +1,10 @@
+
+<ng-container *ngIf="visible">
+  <div>
+    {{notFoundMessage | titlecase}}
+    <a [routerLink]="resetLinkRoute"
+    class="bg-dark">
+      {{resetLinkText | titlecase}}
+    </a>
+  </div>
+</ng-container>

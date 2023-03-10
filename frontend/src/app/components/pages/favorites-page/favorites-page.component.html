@@ -1,4 +1,16 @@
-<div class="container-fluid" >
+<app-breadcrumb>
+  <nav class="breadcrumb bg-light mb-30">
+    <a class="breadcrumb-item text-dark" routerLinkActive="active" routerLink="/">Home</a>
+    <span class="breadcrumb-item active" routerLinkActive="active">Favorites</span>
+</nav>
+</app-breadcrumb>
+
+<app-not-found [visible]="!favourites || favourites.items.length === 0"
+></app-not-found>
+
+
+
+<div class="container-fluid" *ngIf="favourites && favourites.items.length">
   <div class="row px-xl-5">
     <div class="col table-responsive mb-5">
       <table class="table table-light table-borderless table-hover text-center mb-0">
@@ -14,8 +26,9 @@
             <tr>
               <td class="align-middle">
                 <img [src]="favourite.product.imageUrl"
+                routerLink="/product-details/{{favourite.product.id}}"
                 [alt]="favourite.product.name"
-                style="width: 50px;">
+                style="width: 50px; cursor: pointer;">
                 {{favourite.product.name}}
               </td>
               <td class="align-middle">

@@ -47,10 +47,24 @@
           <div class="product-item bg-light mb-4">
             <img [src]="product.imageUrl" [alt]="product.name" class="img-fluid w-100">
             <div class="product-action">
-              <a class="btn btn-outline-dark btn-square" (click)="addToCart(product)"><i class="fa fa-shopping-cart"></i></a>
-              <a class="btn btn-outline-dark btn-square" (click)="addToFavorite(product)"><i class="fa fa-heart"></i></a>
-              <a class="btn btn-outline-dark btn-square"><i class="fa fa-refresh"></i></a>
-              <a class="btn btn-outline-dark btn-square" routerLink="/product-details/{{product.id}}"><i class="fa fa-search"></i></a>
+              <a class="btn btn-outline-dark btn-square"
+              (click)="addToCart(product)"
+              title="Add To Cart">
+                <i class="fa fa-shopping-cart"></i>
+              </a>
+              <a class="btn btn-outline-dark btn-square"
+              (click)="addToFavorite(product)"
+              title="Add To Favorite">
+                <i class="fa fa-heart"></i>
+              </a>
+              <a class="btn btn-outline-dark btn-square"
+              title="Reload Page">
+                <i class="fa fa-refresh"></i>
+              </a>
+              <a class="btn btn-outline-dark btn-square"
+              routerLink="/product-details/{{product.id}}"
+              title="Check Product Details">
+                <i class="fa fa-search"></i></a>
             </div>
             <div class="text-center py-4">
               <p class="h6 text-decoration-none text-truncate">

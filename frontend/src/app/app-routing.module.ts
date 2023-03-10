@@ -4,7 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './components/pages/cart/cart.component';
 import { FavoritesPageComponent } from './components/pages/favorites-page/favorites-page.component';
 import { HomeComponent } from './components/pages/home/home.component';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { ProductDetailsComponent } from './components/pages/product-details/product-details.component';
+import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
+import { ShopComponent } from './components/pages/shop/shop.component';
 
 const routes: Routes = [
   {
@@ -19,8 +22,8 @@ const routes: Routes = [
   },
   {
     path:'search/:searchProduct',
-    title: 'Multi Shop',
-    component:  HomeComponent
+    title: 'Shop-Now',
+    component:  ShopComponent
   },
   {
     path:'cart-page',
@@ -36,6 +39,21 @@ const routes: Routes = [
     path:'product-details/:id',
     title:'Product Details',
     component:ProductDetailsComponent
+  },
+  {
+    path:'shop',
+    title: 'Shop Now',
+    component:ShopComponent
+  },
+  {
+    path:'sign-in',
+    title: 'Login User',
+    component:LoginPageComponent
+  },
+  {
+    path:'sign-up',
+    title: 'Register User',
+    component:RegisterPageComponent
   }
 ];
 

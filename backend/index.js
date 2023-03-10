@@ -10,19 +10,21 @@ const dotenv = require('dotenv').config();
 
 const product = require('./api/product/route');
 const cartgory = require('./api/cartgory/route');
+const user = require('./api/user/route');
 
 const router = express.Router();
 app.use(cors());
 product.productRoute(router);
 cartgory.cartgoryRoute(router);
+user.userRoutes(router);
 
-app.use(
-    cookieSession({
-        name: "MULTI_SHOP",
-        secret: process.env.HTTP_ONLY,
-        httpOnly:true
-    })
-);
+// app.use(
+//     cookieSession({
+//         name: "MULTI_SHOP",
+//         secret: process.env.HTTP_ONLY,
+//         httpOnly:true
+//     })
+// );
 
 router.use( function(req, res, next)  {
     res.header('Access-Control-Allow-Origin', '*');
@@ -40,7 +42,7 @@ router.use( function(req, res, next)  {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-router.get('/', (req, res) =>{
+router.get('/api', (req, res) =>{
     res.send('Server is up...Catch ya!');
 });
 

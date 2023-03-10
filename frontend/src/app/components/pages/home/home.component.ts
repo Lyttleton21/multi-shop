@@ -21,22 +21,22 @@ export class HomeComponent implements OnInit {
     private favService:FavouriteService) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params
-    .subscribe((data) => {
-      if(data.searchProduct){
-        this.productService.getProductsBySearch(data.searchProduct)
-        .subscribe(search => {
-          this.featuredProducts = search;
+    // this.activatedRoute.params
+    // .subscribe((data) => {
+    //   if(data.searchProduct){
+    //     this.productService.getProductsBySearch(data.searchProduct)
+    //     .subscribe(search => {
+    //       this.featuredProducts = search;
           //console.log(this.featuredProducts);
-        });
-      }else{
+    //     });
+    //   }else{
         this.productService.featuresProduct()
         .subscribe(data => {
           this.featuredProducts = data;
         });
       }
-    });
-  }
+  //   });
+  // }
 
   // addToCart(id:any){
   //   this.cartService.addToCartFromHome(id)

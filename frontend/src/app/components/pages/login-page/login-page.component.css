@@ -1,0 +1,10 @@
+.error-list{
+  color: red;
+  text-align: center;
+  font-size: 0.95rem;
+}
+.register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
